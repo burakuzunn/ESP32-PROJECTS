@@ -1,3 +1,5 @@
+//sayac eklenecek
+
 #define BLYNK_TEMPLATE_ID "TMPLkm405M-q"
 #define BLYNK_DEVICE_NAME "Apartman Aydınlatma"
 #define BLYNK_AUTH_TOKEN "Jw_IP63-KiopP8ysHDvd0wVLVI3iv0Mn"
