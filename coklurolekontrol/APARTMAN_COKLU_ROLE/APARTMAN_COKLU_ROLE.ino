@@ -1,4 +1,6 @@
 //sayac eklenecek
+//hangi kişi ışığı açmış onun için request sözlüğü oluşturulacak
+//konum fonksiyonunda zaman dışardan verilebilecek.
 
 #define BLYNK_TEMPLATE_ID "TMPLkm405M-q"
 #define BLYNK_DEVICE_NAME "Apartman Aydınlatma"
