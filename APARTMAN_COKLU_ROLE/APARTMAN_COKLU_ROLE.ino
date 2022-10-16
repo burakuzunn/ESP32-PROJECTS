@@ -1,7 +1,12 @@
+//projede yapılacak yenilikler
+//  REMOTE OLARAK KOD YÜKLEMESİ YAPILARAK
+//  OLED DİSPLAY ÖZELLİĞNİN ALTYAPISI YAPILACAK
+//proje api:https://fra1.blynk.cloud/external/api/update?token=Jw_IP63-KiopP8ysHDvd0wVLVI3iv0Mn&v4=1
+
 #define BLYNK_TEMPLATE_ID "TMPLkm405M-q"
 #define BLYNK_DEVICE_NAME "Apartman Aydınlatma"
 #define BLYNK_AUTH_TOKEN "Jw_IP63-KiopP8ysHDvd0wVLVI3iv0Mn"
-//https://fra1.blynk.cloud/external/api/update?token=Jw_IP63-KiopP8ysHDvd0wVLVI3iv0Mn&v4=1
+
 #define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -10,8 +15,8 @@
 #include <WiFiUdp.h>
 
 char auth[] = BLYNK_AUTH_TOKEN;
-char ssid[] = "UZUNOGLU_APARTMAN";
-char pass[] = "Burak5334";
+char ssid[] = "**";
+char pass[] = "**";
 
 unsigned long konumTetikZaman1=0;
 unsigned long konumTetikZaman2=0;
@@ -294,7 +299,14 @@ BLYNK_WRITE(V4)
   }
 }
 
-BLYNK_WRITE(V5)//butonu yok. Konuma yaklaştığında iftt üzerinden bu linki tetiklet.
+BLYNK_WRITE(V5)
+///butonu yok. Konuma yaklaştığında iftt üzerinden bu linki tetikler.
+///
+/// Bu fonksiyon bütün ışıkları 3 dklığına açmaya yarar. 19.00-06.00 arasında 
+//  eğer fonksiyon ışıkları açmaz ise saatten dolayıdır. Dalgınlığa gelip kendini sorgulama yani.
+///
+///
+///
 { 
      if (param.asInt()){
   
