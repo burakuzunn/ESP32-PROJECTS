@@ -1,5 +1,9 @@
 /////////////////////////////////////////////----DESİGNED BY BURAK UZUN----///////////////////////////////////////////////
 //https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+#define BLYNK_TEMPLATE_ID "TMPL5Lfvzwq2qwr4e_E"//böyle bir template yok
+#define BLYNK_DEVICE_NAME "Sulama"
+#define BLYNK_AUTH_TOKEN "L-PkzqADd-segTfNRwhZEzA6VrnuxxOMqxCog"//böyle bir token yok
 //-----------------------------------------------------------------------------------------------------------------------
 #include <BlynkSimpleEsp32.h>
 #include <WiFiClient.h>
@@ -24,7 +28,7 @@ String currentTime;
 String currentDate;
 int rssi = 0;                   //internetin ne kadar çektiği ile ilgili bar çubuğunun değişkeni
 int sayac = 0;
-char auth[] = "XAm9EYuRZbbubpLD1pA6xCh2oNo5GmNou";//bilerek bir harf fazladan koydun hangisi ise onu sil
+char auth[] = BLYNK_AUTH_TOKEN;//bilerek bir harf fazladan koydun hangisi ise onu sil
 char ssid[] = "AKU";
 char pass[] = "Burak5334";
 int counter = 0;
@@ -150,7 +154,7 @@ void loop()
       }
     }
     Serial.println("Blynk kütüphanesi aktif");
-    terminal.println("Kesilen-Bağlantı Onarıldı.");
+    terminal.print("*");
     Blynk.syncVirtual(V7);//ışığı butona göre açacak
     delay(100);
     Blynk.syncVirtual(V2);//dikkat et motoru butona göre açabilir!!!!!!!!!!!
@@ -294,6 +298,7 @@ BLYNK_WRITE(V14)
     terminal.println("04)Terminal Temizleme");
     terminal.println("05)Motor Sayaç");
     terminal.println(" 051)Sayaç Sıfırlama");
+    terminal.println("06)RSSI");
     terminal.flush();
   }
 
@@ -305,6 +310,14 @@ BLYNK_WRITE(V14)
     terminal.println(ssid);
     terminal.print("pass:");
     terminal.println(pass);
+    terminal.flush();
+  }
+  else if (a == "06")
+  {
+    terminal.println(" ");
+     
+    terminal.print("rssi:");
+    terminal.println(rssi);
     terminal.flush();
   }
 
